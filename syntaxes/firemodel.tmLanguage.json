@@ -99,8 +99,12 @@
 				"include": "#comment"
 			},
 			{
-				"match": "([a-zA-Z][a-zA-Z0-9-_]+),",
-				"name": "constant.language"
+				"match": "([a-zA-Z][a-zA-Z0-9-_]+)(,)",
+				"captures": {
+					"1": {"name": "constant.language"},
+					"2": {"name": "punctuation.separator"}
+				}
+				
 			}
 		]
 	},
