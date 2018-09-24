@@ -1,8 +1,8 @@
 {
     "name": "firemodel-syntax",
-    "displayName": "FireModel Support",
-    "description": "FireModel syntax highlighting",
-    "version": "0.0.2",
+    "displayName": "firemodel Support",
+    "description": "firemodel syntax highlighting",
+    "version": "0.0.3",
     "publisher": "ozouai",
     "license": "MIT",
     "repository": {
@@ -17,7 +17,7 @@
     "contributes": {
         "languages": [{
             "id": "firemodel",
-            "aliases": ["FireModel", "firemodel"],
+            "aliases": ["FireModel", "firemodel", "Firemodel"],
             "extensions": [".firemodel"],
             "configuration": "./language-configuration.json"
         }],

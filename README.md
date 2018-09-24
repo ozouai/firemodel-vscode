@@ -1,6 +1,6 @@
-# FireModel Syntax Highlighting
+# firemodel Syntax Highlighting
 
-This adds support to VSCode for syntax highlighting of [FireModel](https://github.com/mickeyreiss/firemodel)
+This adds support to VSCode for syntax highlighting of [firemodel](https://github.com/mickeyreiss/firemodel)
 
 ## Features
 
