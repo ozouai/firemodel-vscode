@@ -2,14 +2,14 @@
     "name": "firemodel-syntax",
     "displayName": "FireModel Support",
     "description": "FireModel syntax highlighting",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "ozouai",
     "license": "MIT",
     "repository": {
         "url": "https://github.com/ozouai/firemodel-vscode"
     },
     "engines": {
-        "vscode": "^1.27.0"
+        "vscode": "^1.10.0"
     },
     "categories": [
         "Programming Languages"
