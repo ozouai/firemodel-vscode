@@ -1,0 +1,121 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "FireModel",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#model"
+    },
+    {
+      "include": "#types"
+	},
+	{
+		"include": "#comment"
+	},
+	{"include": "#enum"},
+	{"include": "#option"}
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.firemodel",
+          "match": "\\b(if|while|for|return)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "variable.support.firemodel",
+          "match": "\\b(File|reference|string|boolean|array)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.firemodel",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.firemodel",
+          "match": "\\\\."
+        }
+      ]
+	},
+	"comment": {
+		"begin": "//",
+		"end": "\n",
+		"name": "comment.firemodel"
+	},
+    "model": {
+      "begin": "(model) (.+){",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.firemodel" },
+        "2": { "name": "entity.name.type.firemodel" }
+      },
+      "end": "}",
+      "patterns": [
+        {
+          "include": "#model"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"match": "([a-zA-Z][a-zA-Z0-9-_]+) ([a-zA-Z][a-zA-Z0-9-_]+);",
+			"captures": {
+				"1": { "name": "entity.name.type.firemodel"},
+				"2": { "name": "variable.other.firemodel"}
+			}
+		},
+		{
+			"match": "(reference|array|map|collection)<([a-zA-Z][a-zA-Z0-9-_]+)> ([a-zA-Z][a-zA-Z0-9-_]+);",
+			"captures": {
+				"1": { "name": "variable.language"},
+				"2": { "name": "entity.name.type.firemodel"},
+				"3": { "name": "variable.other.firemodel"}
+			}
+		},
+		{
+			"include": "#option"
+		}
+      ]
+	},
+	"enum": {
+		"begin": "(enum) (.+){",
+		"end": "}",
+		"beginCaptures": {
+			"1": { "name": "keyword.control.firemodel" },
+			"2": { "name": "entity.name.type.firemodel" }
+		},
+		"patterns": [
+			{
+				"include": "#comment"
+			},
+			{
+				"match": "([a-zA-Z][a-zA-Z0-9-_]+),",
+				"name": "constant.language"
+			}
+		]
+	},
+  
+  "option": {
+	
+		"match": "(option) (firestore|ts).([a-zA-Z][a-zA-Z0-9-_]+) = (.+);",
+		"captures": {
+			"1": {"name": "keyword.control.firemodel"},
+			"2": {"name": "variable.language"},
+			"3": {"name": "variable.language"},
+			"4": {"name": "variable.parameter"}
+		}
+	
+  }
+},
+  "scopeName": "source.firemodel"
+}

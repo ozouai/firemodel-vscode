@@ -1,0 +1,26 @@
+{
+    "name": "firemodel",
+    "displayName": "firemodel",
+    "description": "FireModel syntax highlighting",
+    "version": "0.0.1",
+    "publisher": "ozouai",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "firemodel",
+            "aliases": ["FireModel", "firemodel"],
+            "extensions": [".firemodel"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "firemodel",
+            "scopeName": "source.firemodel",
+            "path": "./syntaxes/firemodel.tmLanguage.json"
+        }]
+    }
+}
