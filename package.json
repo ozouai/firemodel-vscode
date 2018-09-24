@@ -1,9 +1,10 @@
 {
-    "name": "firemodel",
-    "displayName": "firemodel",
+    "name": "firemodel-syntax",
+    "displayName": "FireModel Support",
     "description": "FireModel syntax highlighting",
     "version": "0.0.1",
     "publisher": "ozouai",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.27.0"
     },
